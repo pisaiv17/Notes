@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
 using Notes.Models;
@@ -29,6 +30,8 @@ namespace Notes.Data
 
         public Task<int> SaveNoteAsync(Note note)
         {
+            note.Date = DateTime.Now;
+            
             if (note.ID != 0)
             {
                 return _database.UpdateAsync(note);
