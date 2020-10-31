@@ -2,13 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Notes"
-             x:Class="Notes.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+             x:Class="Notes.MainPage"
+             Title="Poznámky">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Clicked="AddNote_OnClicked"    
+            Text="Nová poznámka" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="24">
+            <ScrollView>
+                <ListView
+                    x:Name="ListView"
+                    ItemSelected="SingleNote_OnClicked">
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell
+                                x:Name="{Binding ID}"
+                                Text="{Binding Text}"
+                                Detail="{Binding Date}"
+                                TextColor="#000"
+                                DetailColor="#999" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>
