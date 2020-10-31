@@ -17,6 +17,9 @@ namespace Notes
             InitializeComponent();
         }
         
+        /// <summary>
+        /// Textarea focus
+        /// </summary>
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -24,6 +27,11 @@ namespace Notes
             Editor.Focus();
         }
 
+        /// <summary>
+        /// On textarea switch save note
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void Editor_OnSwitched(object sender, EventArgs e)
         {
             var note = (Note)BindingContext;
@@ -38,6 +46,11 @@ namespace Notes
             }
         }
 
+        /// <summary>
+        /// Delete note
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void Delete_OnClicked(object sender, EventArgs e)
         {
             var note = (Note)BindingContext;

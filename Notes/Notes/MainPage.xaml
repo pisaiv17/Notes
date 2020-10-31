@@ -5,12 +5,14 @@
              x:Class="Notes.MainPage"
              Title="Poznámky">
     
+    <!-- Header -->
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             Clicked="AddNote_OnClicked"    
             Text="Nová poznámka" />
     </ContentPage.ToolbarItems>
     
+    <!-- Main -->
     <ContentPage.Content>
         <StackLayout Padding="24">
             <ScrollView>

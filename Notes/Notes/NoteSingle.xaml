@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Notes.NoteSingle">
     
+    <!-- Header -->
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             Clicked="Delete_OnClicked"    
             Text="Smazat poznámku" />
     </ContentPage.ToolbarItems>
     
+    <!-- Main -->
     <ContentPage.Content>
         <StackLayout Padding="24">
             <Editor 
