@@ -11,7 +11,7 @@ namespace Notes
     public partial class App : Application
     {
         static NoteDatabase database;
-
+        
         public static NoteDatabase Database
         {
             get
